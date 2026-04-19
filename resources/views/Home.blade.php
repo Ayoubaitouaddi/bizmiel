@@ -308,7 +308,6 @@
   }
   .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(122,78,16,0.15); }
   .product-img {
-    height: 180px;
     display: flex; align-items: center; justify-content: center;
     font-size: 4rem;
     position: relative;
@@ -368,9 +367,9 @@
   .packs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .pack-card {
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(245,200,66,0.2);
+    border: 1px solid rgba(236, 233, 226, 0.2);
     border-radius: var(--radius-lg);
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     overflow: hidden;
     transition: transform 0.25s, background 0.25s;
@@ -804,8 +803,8 @@
     <div class="product-card">
         {{-- IMAGE --}}
         <div class="product-img">
-            <img src="{{ asset('images/products/'.$product->image) }}"
-                 style="width:100%;height:100%;object-fit:cover;">
+            <img src="{{ asset('storage/'.$product->image) }}"
+                 style="width:100%;height:350px;object-fit:cover;">
         </div>
         {{-- INFO --}}
         <div class="product-info">
@@ -864,7 +863,11 @@
   <div class="packs-grid">
     @foreach($packs as $pack)
       <div class="pack-card">
-
+        <div class="pack-img">
+    <img src="{{ asset('storage/'.$pack->image) }}"
+         alt="{{ $pack->name }}"
+         style="width:100%;height:300px;object-fit:cover;border-radius:10px;">
+    </div>
         <h3>{{ $pack->name }}</h3>
         <p>{{ $pack->description }}</p>
 
