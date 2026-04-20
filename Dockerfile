@@ -24,6 +24,7 @@ RUN apt-get update \
         libxml2-dev \
     && docker-php-ext-configure zip \
     && docker-php-ext-install pdo pdo_mysql zip intl opcache \
+    && a2dismod mpm_event || true \
     && a2enmod rewrite \
     && rm -rf /var/lib/apt/lists/*
 
