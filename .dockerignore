@@ -1,0 +1,12 @@
+**/node_modules
+**/vendor
+**/.git
+**/.github
+**/.env
+**/.env.*
+**/storage/*
+**/bootstrap/cache/*
+**/tests
+**/phpunit.xml
+**/README.md
+**/CHANGELOG.md
